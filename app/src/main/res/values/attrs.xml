@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CardView">
+        <attr name="shape" format="enum">
+            <enum name="wave" value="3"/>
+            <enum name="ellipse" value="1"/>
+            <enum name="romb" value="2"/>
+        </attr>
+        <attr name="shape_color" format="enum">
+            <enum name="blue" value="3"/>
+            <enum name="red" value="1"/>
+            <enum name="green" value="2"/>
+        </attr>
+        <attr name="count" format="integer"/>
+        <attr name="fill" format="enum">
+            <enum name="none" value="3"/>
+            <enum name="filled" value="1"/>
+            <enum name="pattern" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

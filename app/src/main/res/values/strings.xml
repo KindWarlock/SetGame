@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SetGame</string>
+    <string name="name">Name</string>
+    <string name="pwd">Password</string>
+    <string name="reg">Register</string>
+    <string name="reg_text">Before you start!</string>
+    <string name="score">Score: %d</string>
+    <string name="add">Add cards</string>
+    <string name="new_room">New room</string>
+</resources>
