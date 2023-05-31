@@ -43,6 +43,7 @@ class GameActivity : AppCompatActivity(), CardsInteraction {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect {
                     initTable(it.field)
+                    binding.score.text = resources.getString(R.string.score,  it.score)
                 }
             }
         }

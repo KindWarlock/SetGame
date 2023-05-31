@@ -32,13 +32,9 @@ class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(cont
             fill = it.getInt(R.styleable.CardView_fill, 0)
             it.recycle()
         }
-        for (i in 0 until imgs.size) {
-            imgs[i] = ImageView(context)
-        }
-    }
-
-
-    override fun onDraw(canvas: Canvas?) {
+//        for (i in 0 until imgs.size) {
+//            imgs[i] = ImageView(context)
+//        }
         for (i in 0 until count) {
             val ellipseId = when (fill) {
                 FILL_PATTERN -> R.drawable.ellipse_p
@@ -55,8 +51,8 @@ class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(cont
                 FILL_FILLED -> R.drawable.wave_f
                 else -> R.drawable.wave
             }
-
-            imgs[i].setImageResource(
+            val img = ImageView(context)
+            img.setImageResource(
                 when (shape) {
                     SHAPE_ELLIPSE -> ellipseId
                     SHAPE_ROMB -> rombId
@@ -64,7 +60,7 @@ class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(cont
                 }
             )
 
-            imgs[i].colorFilter = when (color) {
+            img.colorFilter = when (color) {
                 COLOR_RED -> PorterDuffColorFilter(
                     context.getColor(R.color.red),
                     PorterDuff.Mode.SRC_ATOP
@@ -85,10 +81,11 @@ class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(cont
                     PorterDuff.Mode.SRC_ATOP
                 )
             }
-            imgs[i].layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, 100)
-            addView(imgs[i])
+            img.layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, 100)
+            addView(img)
         }
     }
+
 
     companion object {
         const val COLOR_GREEN = 2
@@ -99,8 +96,21 @@ class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(cont
         const val SHAPE_ROMB = 2
         const val SHAPE_WAVE = 3
 
-        const val FILL_NONE = 1
-        const val FILL_FILLED = 2
-        const val FILL_PATTERN = 3
+        const val FILL_NONE = 3
+        const val FILL_FILLED = 1
+        const val FILL_PATTERN = 2
     }
 }
+
+/*
+    <com.example.setgame.ui.CardView
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:background="@drawable/card_background"
+        custom:shape="ellipse"
+        custom:count="2"
+        custom:fill="pattern"
+        custom:shape_color="blue"
+        />
+ */

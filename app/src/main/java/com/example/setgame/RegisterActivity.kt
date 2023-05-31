@@ -18,7 +18,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val sharedPref = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE)
-//        sharedPref.edit().remove("accessToken").commit();
+        sharedPref.edit().remove("accessToken").commit();
         if (sharedPref.getString("accessToken", "") != "") {
             listRooms()
         }
