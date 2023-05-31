@@ -1,5 +1,6 @@
 package com.example.setgame.data
 
+import android.util.Log
 import com.example.setgame.API.Card
 import com.example.setgame.API.NetHandler
 import com.example.setgame.API.SetRequest
@@ -16,6 +17,7 @@ class GameRepository(private val token: String) {
         withContext(Dispatchers.IO) {
             val response = NetHandler.setApi.getField(SetRequest(accessToken = token)).execute()
             val data = response.body()!!
+            Log.d("TAG", "Get field: $data")
             field.clear()
             field.addAll(data.cards)
             updateScore(score)

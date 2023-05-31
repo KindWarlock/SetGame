@@ -7,8 +7,10 @@ import android.graphics.PorterDuffColorFilter
 import android.util.AttributeSet
 import android.util.Log
 import android.view.Gravity
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
+import androidx.core.view.children
 import com.example.setgame.R
 
 class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(context, attrs) {
@@ -34,6 +36,7 @@ class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(cont
             imgs[i] = ImageView(context)
         }
     }
+
 
     override fun onDraw(canvas: Canvas?) {
         for (i in 0 until count) {
@@ -82,7 +85,7 @@ class CardView(context: Context, attrs: AttributeSet? = null): LinearLayout(cont
                     PorterDuff.Mode.SRC_ATOP
                 )
             }
-            imgs[i].layoutParams = LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, 100)
+            imgs[i].layoutParams = LayoutParams(LayoutParams.WRAP_CONTENT, 100)
             addView(imgs[i])
         }
     }

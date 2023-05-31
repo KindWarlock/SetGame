@@ -1,4 +1,4 @@
-package com.example.setgame
+package com.example.setgame.ui
 
 import com.example.setgame.API.Card
 

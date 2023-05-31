@@ -8,7 +8,7 @@ class NetHandler {
     companion object {
         val retrofit by lazy {
             with(Retrofit.Builder()) {
-                baseUrl("http://172.18.98.222:5000/")
+                baseUrl("http://192.168.1.41:5000/")
                 addConverterFactory(GsonConverterFactory.create())
                 build()
             }

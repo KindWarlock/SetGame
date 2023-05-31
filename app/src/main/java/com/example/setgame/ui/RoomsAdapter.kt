@@ -8,9 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.setgame.API.Game
 import com.example.setgame.R
-import com.example.setgame.RoomsInteraction
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.launch
 
 class RoomsAdapter(var list: ArrayList<Game>, val listener: RoomsInteraction): RecyclerView.Adapter<RoomsAdapter.ViewHolder>(){
     inner class ViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {

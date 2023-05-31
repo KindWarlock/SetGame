@@ -26,6 +26,7 @@ class RoomsRepository(private val token: String) {
         withContext(Dispatchers.IO) {
             val response = NetHandler.setApi.getGames(SetRequest(accessToken = token)).execute()
             val data = response.body()!!
+            Log.d("TAG", "$data")
             val newRooms = ArrayList<Game>(data.games!!)
             rooms = newRooms
 //            rooms.clear()

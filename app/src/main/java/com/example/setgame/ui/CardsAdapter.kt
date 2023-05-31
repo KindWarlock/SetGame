@@ -3,7 +3,6 @@ package com.example.setgame.ui
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.setgame.API.Card
-import com.example.setgame.CardsInteraction
 
 class CardsAdapter(val list: ArrayList<Card>, val listener: CardsInteraction): RecyclerView.Adapter<CardsAdapter.ViewHolder>() {
     inner class ViewHolder(val cardView: CardView) : RecyclerView.ViewHolder(cardView) {

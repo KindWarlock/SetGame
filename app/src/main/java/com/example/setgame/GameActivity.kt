@@ -7,20 +7,14 @@ import android.util.Log
 import android.view.ViewGroup
 import android.widget.TableRow
 import androidx.activity.viewModels
-import androidx.core.view.children
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.recyclerview.widget.GridLayoutManager
 import com.example.setgame.API.Card
-import com.example.setgame.API.NetHandler.Companion.setApi
-import com.example.setgame.API.SetRequest
 import com.example.setgame.databinding.ActivityGameBinding
 import com.example.setgame.ui.CardView
-import com.example.setgame.ui.CardsAdapter
+import com.example.setgame.ui.CardsInteraction
 import com.example.setgame.ui.GameViewModel
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
@@ -38,6 +32,10 @@ class GameActivity : AppCompatActivity(), CardsInteraction {
         val token = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE)
             .getString("accessToken", "") ?: ""
 
+        binding.cards.addOnLayoutChangeListener { v, left, top, right, bottom, oldLeft, oldTop, oldRight, oldBottom ->
+            Log.d("TAG", "Layout changed")
+            binding.cards.requestLayout()
+        }
         val _viewModel: GameViewModel by viewModels{ GameViewModel.GameViewModelFactory(token) }
         viewModel = _viewModel
 
@@ -73,7 +71,7 @@ class GameActivity : AppCompatActivity(), CardsInteraction {
             }
             binding.cards.addView(newRow, i)
         }
-        binding.cards.invalidate()
+        binding.cards.requestLayout()
 //        Log.d("TAG", "${binding.cards.getChildAt(3).width}")
     }
 

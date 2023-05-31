@@ -7,4 +7,5 @@
     <string name="score">Score: %d</string>
     <string name="add">Add cards</string>
     <string name="new_room">New room</string>
+    <string name="host_address">http://192.168.1.41:5000/</string>
 </resources>

@@ -2,24 +2,19 @@ package com.example.setgame
 
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import com.example.setgame.API.Login
 import com.example.setgame.API.NetHandler.Companion.setApi
-import com.example.setgame.API.SetResponse
 import com.example.setgame.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Response
-import kotlin.coroutines.coroutineContext
 
 private lateinit var binding: ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val sharedPref = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE)

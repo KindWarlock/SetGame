@@ -12,10 +12,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.setgame.ui.GameViewModel
 import com.example.setgame.ui.RoomsAdapter
+import com.example.setgame.ui.RoomsInteraction
 import com.example.setgame.ui.RoomsViewModel
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class RoomsActivity : AppCompatActivity(), RoomsInteraction {
